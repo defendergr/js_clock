@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript Ρολόι</title>
+  <style>
+#ora{
+	position:absolute;
+	top:2px;
+	right:2px;
+	border:1px solid black;
+	font-size:20px;;
+	padding:2px;
+}	
+</style>
+ 
+</head>
+<body>
+<div id="ora"></div>
+
+<script>	
+window.onload=roloi();
+
+function roloi(){
+var ora=document.querySelector("#ora");
+var d=new Date();
+var h=d.getHours();
+var m=d.getMinutes();
+var s=d.getSeconds();
+if (s<10){s="0"+s;}
+if (m<10){m="0"+m;}
+if (h<10){h="0"+h;}
+ora.innerHTML=h+":"+m+":"+s;
+setTimeout(roloi,1000);
+	
+
+}
+</script>
+</body>
+</html>
